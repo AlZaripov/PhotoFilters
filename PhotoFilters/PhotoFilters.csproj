@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PhotoFilters.BL\PhotoFilters.BL.csproj">
+      <Project>{c99e687f-f387-4ca3-9f7e-25037aa2fb43}</Project>
+      <Name>PhotoFilters.BL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
