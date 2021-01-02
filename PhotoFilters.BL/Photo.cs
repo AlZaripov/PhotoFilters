@@ -22,5 +22,11 @@ namespace PhotoFilters.BL
                 }
             }
         }
+
+        public Pixel this[int x, int y] 
+        {
+            get { return pixels[x, y]; }
+        }
+
     }
 }

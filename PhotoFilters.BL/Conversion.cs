@@ -16,9 +16,9 @@ namespace PhotoFilters.BL
             {
                 for (int j = 0; j < bm.Height; j++)
                 {
-                    photo.pixels[i, j].R = bm.GetPixel(i, j).R;
-                    photo.pixels[i, j].G = bm.GetPixel(i, j).G;
-                    photo.pixels[i, j].B = bm.GetPixel(i, j).B;
+                    photo[i, j].R = bm.GetPixel(i, j).R;
+                    photo[i, j].G = bm.GetPixel(i, j).G;
+                    photo[i, j].B = bm.GetPixel(i, j).B;
                 }
             }
             return photo;
@@ -30,7 +30,7 @@ namespace PhotoFilters.BL
 
             for (int i = 0; i < photo.Width; i++)
                 for (int j = 0; j < photo.Height; j++)
-                    bm.SetPixel(i, j, Color.FromArgb(photo.pixels[i, j].R, photo.pixels[i, j].G, photo.pixels[i, j].B));
+                    bm.SetPixel(i, j, Color.FromArgb(photo[i, j].R, photo[i, j].G, photo[i, j].B));
             return bm;
         }
     }
