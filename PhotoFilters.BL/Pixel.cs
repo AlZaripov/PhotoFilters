@@ -6,11 +6,44 @@ namespace PhotoFilters.BL
 {
     public class Pixel
     {
-        public int R { get; set; }
-        public int G { get; set; }
-        public int B { get; set; }
+        private double r;
+        private double g;
+        private double b;
 
-        public Pixel(int R, int G, int B)
+        public double R 
+        {
+            get { return r; }
+            set 
+            {
+                if (value > 255)
+                    r = 255;
+                r = value;
+            }
+        }
+
+        public double G
+        {
+            get { return g; }
+            set
+            {
+                if (value > 255)
+                    g = 255;
+                g = value;
+            }
+        }
+
+        public double B
+        {
+            get { return b; }
+            set
+            {
+                if (value > 255)
+                    b = 255;
+                b = value;
+            }
+        }
+
+        public Pixel(double R, double G, double B)
         {
             this.R = R;
             this.G = G;

@@ -26,10 +26,12 @@ namespace PhotoFilters
             original.Image = img;
             Controls.Add(original);
 
+
             PictureBox result = new PictureBox();
             result.Location = new Point(0, original.Height + 10);
             result.Size = new Size(photo.Width, photo.Height);
-            result.Image = Conversion.PhotoToBitmap(photo);
+            result.Image = Conversion.PhotoToBitmap(new GrayScaleFilter().ChangeImage(photo, 0));
+            result.Image = Conversion.PhotoToBitmap(new BrightnessFilter().ChangeImage(photo, 0.5));
             Controls.Add(result);
         }     
     }
