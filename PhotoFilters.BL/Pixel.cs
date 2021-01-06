@@ -7,40 +7,24 @@ namespace PhotoFilters.BL
     public class Pixel
     {
         private double r;
-        private double g;
-        private double b;
-
-        public double R 
+        public double R
         {
             get { return r; }
-            set 
-            {
-                if (value > 255)
-                    r = 255;
-                r = value;
-            }
+            set { r = CheckPixelValue(value); }
         }
 
+        private double g;
         public double G
         {
             get { return g; }
-            set
-            {
-                if (value > 255)
-                    g = 255;
-                g = value;
-            }
+            set { g = CheckPixelValue(value); }
         }
 
+        private double b;
         public double B
         {
             get { return b; }
-            set
-            {
-                if (value > 255)
-                    b = 255;
-                b = value;
-            }
+            set { b = CheckPixelValue(value); }
         }
 
         public Pixel(double R, double G, double B)
@@ -49,10 +33,16 @@ namespace PhotoFilters.BL
             this.G = G;
             this.B = B;
         }
-
         public Pixel()
         {
 
+        }
+
+        private double CheckPixelValue(double value)
+        {
+            if (value > 255)
+                throw new ArgumentException("Pixel value is not correct");
+            return value;
         }
     }
 }

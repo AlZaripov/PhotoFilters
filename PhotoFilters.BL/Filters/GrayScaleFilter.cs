@@ -4,13 +4,11 @@ using System.Text;
 
 namespace PhotoFilters.BL
 {
-    public class GrayScaleFilter
+    public class GrayScaleFilter : IFilter
     {
-        public int Coefficient { get; set; }
-
         public override string ToString()
         {
-            return "Оттенки серого";
+            return "Gray Scale filter";
         }
 
         public Photo ChangeImage(Photo original, double coefficient)

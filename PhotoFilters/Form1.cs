@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,26 +14,45 @@ namespace PhotoFilters
 {
     public partial class MainForm : Form
     {
+        Bitmap bm;
+        Photo photo;
+        double parameters;
+
         public MainForm()
         {
             InitializeComponent();
 
-            Bitmap img = new Bitmap(@"C:\Users\Александр\source\repos\PhotoFilters\PhotoFilters.BL\Image.jpg");
-            var photo = Conversion.BitmapToPhoto(img);
+            bm = new Bitmap(@"C:\Users\Александр\source\repos\PhotoFilters\PhotoFilters.BL\Images\Image.jpg");
+            var image = new Bitmap(bm, new Size(480, 300));
+            photo = Conversion.BitmapToPhoto(image);
 
-            PictureBox original = new PictureBox();
-            original.Location = new Point(0,0);
-            original.Size = new Size(img.Width, img.Height);
-            original.Image = img;
-            Controls.Add(original);
+            originalPicture.Image = image;
 
+            filterSelector.SelectedIndexChanged += ChangeFilter;
+            applyButton.Click += ClickApply;
+        }
 
-            PictureBox result = new PictureBox();
-            result.Location = new Point(0, original.Height + 10);
-            result.Size = new Size(photo.Width, photo.Height);
-            result.Image = Conversion.PhotoToBitmap(new GrayScaleFilter().ChangeImage(photo, 0));
-            result.Image = Conversion.PhotoToBitmap(new BrightnessFilter().ChangeImage(photo, 0.5));
-            Controls.Add(result);
-        }     
+        private void ClickApply(object sender, EventArgs e)
+        {
+            var filter = (IFilter)filterSelector.SelectedItem;
+            if (filter == null) return;
+
+            if (filterParameters.Text == "")
+                parameters = 1;
+            else
+                parameters = double.Parse(filterParameters.Text.Replace(',', '.'), CultureInfo.InvariantCulture);
+
+            resultPicture.Image = Conversion.PhotoToBitmap(filter.ChangeImage(photo, parameters));
+        }
+
+        private void ChangeFilter(object sender, EventArgs e)
+        {
+            var filter = (IFilter)filterSelector.SelectedItem;
+        }
+
+        public void AddFilter(IFilter filter)
+        {
+            filterSelector.Items.Add(filter);
+        }
     }
 }

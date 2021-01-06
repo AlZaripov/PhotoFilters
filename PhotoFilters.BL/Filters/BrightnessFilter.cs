@@ -4,13 +4,11 @@ using System.Text;
 
 namespace PhotoFilters.BL
 {
-    public class BrightnessFilter
-    {
-        public int Coefficient { get; set; }
-
+    public class BrightnessFilter : IFilter
+    { 
         public override string ToString()
         {
-            return "Изменение яркости";
+            return "Brightness filter";
         }
 
         public Photo ChangeImage(Photo original, double coefficient)
