@@ -16,7 +16,10 @@ namespace PhotoFilters
     {
         Bitmap bm;
         Photo photo;
-        double parameters;
+
+        Label parametersLabel;
+        TextBox parameters = new TextBox();
+
 
         public MainForm()
         {
@@ -37,17 +40,33 @@ namespace PhotoFilters
             var filter = (IFilter)filterSelector.SelectedItem;
             if (filter == null) return;
 
-            if (filterParameters.Text == "")
-                parameters = 1;
-            else
-                parameters = double.Parse(filterParameters.Text.Replace(',', '.'), CultureInfo.InvariantCulture);
+            double modifyValue = 1;
+            if(parameters.Text != "")
+                modifyValue = double.Parse(parameters.Text.Replace(',', '.'), CultureInfo.InvariantCulture);
 
-            resultPicture.Image = Conversion.PhotoToBitmap(filter.ChangeImage(photo, parameters));
+            resultPicture.Image = Conversion.PhotoToBitmap(filter.ChangeImage(photo, modifyValue));
         }
 
         private void ChangeFilter(object sender, EventArgs e)
         {
             var filter = (IFilter)filterSelector.SelectedItem;
+            Controls.Remove(parametersLabel);
+            Controls.Remove(parameters);
+
+            foreach(var param in filter.GetParameters())
+            {
+                parametersLabel = new Label();
+                parametersLabel.Location = new Point(filterSelector.Location.X, filterSelector.Location.Y + 50);
+                parametersLabel.Size = new Size(100, 25);
+                parametersLabel.Text = param.Name;
+                Controls.Add(parametersLabel);
+
+                parameters = new TextBox();
+                parameters.Location = new Point(filterSelector.Location.X, filterSelector.Location.Y + 120);
+                parameters.Size = new Size(50, 50);
+                Controls.Add(parameters);
+            }
+            
         }
 
         public void AddFilter(IFilter filter)

@@ -25,5 +25,9 @@ namespace PhotoFilters.BL
             return photo;
         }
 
+        public FilterParameter[] GetParameters()
+        {
+            return new FilterParameter[] { };
+        }
     }
 }

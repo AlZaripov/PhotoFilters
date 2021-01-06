@@ -6,7 +6,8 @@ namespace PhotoFilters.BL
 {
     public interface IFilter
     {
+        FilterParameter[] GetParameters();
         string ToString();
-        Photo ChangeImage(Photo original, double coefficient);
+        Photo ChangeImage(Photo original, double value);
     }
 }

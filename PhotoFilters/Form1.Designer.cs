@@ -34,8 +34,6 @@ namespace PhotoFilters
             this.SelectFilterLabel = new System.Windows.Forms.Label();
             this.filterSelector = new System.Windows.Forms.ComboBox();
             this.applyButton = new System.Windows.Forms.Button();
-            this.filterParameters = new System.Windows.Forms.TextBox();
-            this.filterParametersLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.originalPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultPicture)).BeginInit();
             this.SuspendLayout();
@@ -92,31 +90,11 @@ namespace PhotoFilters
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;
             // 
-            // filterParameters
-            // 
-            this.filterParameters.Location = new System.Drawing.Point(520, 124);
-            this.filterParameters.Name = "filterParameters";
-            this.filterParameters.Size = new System.Drawing.Size(116, 20);
-            this.filterParameters.TabIndex = 7;
-            // 
-            // filterParametersLabel
-            // 
-            this.filterParametersLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.filterParametersLabel.AutoSize = true;
-            this.filterParametersLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.filterParametersLabel.Location = new System.Drawing.Point(516, 102);
-            this.filterParametersLabel.Name = "filterParametersLabel";
-            this.filterParametersLabel.Size = new System.Drawing.Size(120, 19);
-            this.filterParametersLabel.TabIndex = 8;
-            this.filterParametersLabel.Text = "Filter parameters";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 661);
-            this.Controls.Add(this.filterParametersLabel);
-            this.Controls.Add(this.filterParameters);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.filterSelector);
             this.Controls.Add(this.SelectFilterLabel);
@@ -139,8 +117,6 @@ namespace PhotoFilters
         private System.Windows.Forms.Label SelectFilterLabel;
         private System.Windows.Forms.ComboBox filterSelector;
         private System.Windows.Forms.Button applyButton;
-        private System.Windows.Forms.TextBox filterParameters;
-        private System.Windows.Forms.Label filterParametersLabel;
     }
 }
 
