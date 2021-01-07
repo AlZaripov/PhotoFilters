@@ -42,9 +42,6 @@ namespace PhotoFilters
             // 
             // originalPicture
             // 
-            this.originalPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.originalPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.originalPicture.Location = new System.Drawing.Point(17, 22);
             this.originalPicture.Name = "originalPicture";
@@ -88,6 +85,7 @@ namespace PhotoFilters
             // 
             // applyButton
             // 
+            this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.applyButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.applyButton.Location = new System.Drawing.Point(525, 139);
             this.applyButton.Name = "applyButton";
@@ -98,6 +96,7 @@ namespace PhotoFilters
             // 
             // SaveFileButton
             // 
+            this.SaveFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveFileButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveFileButton.Location = new System.Drawing.Point(525, 614);
             this.SaveFileButton.Name = "SaveFileButton";
@@ -108,6 +107,7 @@ namespace PhotoFilters
             // 
             // OpenFileButton
             // 
+            this.OpenFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenFileButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OpenFileButton.Location = new System.Drawing.Point(525, 578);
             this.OpenFileButton.Name = "OpenFileButton";
