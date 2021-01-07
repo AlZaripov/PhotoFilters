@@ -8,7 +8,7 @@ namespace PhotoFilters.BL
     {
         public override string ToString()
         {
-            return "Gray Scale filter";
+            return "Grayscale filter";
         }
 
         public Photo ChangeImage(Photo original, double coefficient)

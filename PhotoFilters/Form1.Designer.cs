@@ -73,19 +73,21 @@ namespace PhotoFilters
             this.filterSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.filterSelector.DropDownHeight = 120;
             this.filterSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filterSelector.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.filterSelector.FormattingEnabled = true;
             this.filterSelector.IntegralHeight = false;
             this.filterSelector.Location = new System.Drawing.Point(520, 50);
             this.filterSelector.MaxDropDownItems = 10;
             this.filterSelector.Name = "filterSelector";
-            this.filterSelector.Size = new System.Drawing.Size(238, 21);
+            this.filterSelector.Size = new System.Drawing.Size(240, 23);
             this.filterSelector.TabIndex = 5;
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(520, 288);
+            this.applyButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.applyButton.Location = new System.Drawing.Point(520, 297);
             this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(238, 35);
+            this.applyButton.Size = new System.Drawing.Size(240, 30);
             this.applyButton.TabIndex = 6;
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;

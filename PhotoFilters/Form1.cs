@@ -25,7 +25,7 @@ namespace PhotoFilters
         {
             InitializeComponent();
 
-            bm = new Bitmap(@"C:\Users\Александр\source\repos\PhotoFilters\PhotoFilters.BL\Images\Image.jpg");
+            bm = new Bitmap(@"C:\Users\Александр\source\repos\PhotoFilters\PhotoFilters.BL\Images\DefaultImage.jpg");
             var image = new Bitmap(bm, new Size(480, 300));
             photo = Conversion.BitmapToPhoto(image);
 
@@ -53,20 +53,23 @@ namespace PhotoFilters
             Controls.Remove(parametersLabel);
             Controls.Remove(parameters);
 
-            foreach(var param in filter.GetParameters())
+            for(int i = 0; i<filter.GetParameters().Length; i++)
             {
                 parametersLabel = new Label();
                 parametersLabel.Location = new Point(filterSelector.Location.X, filterSelector.Location.Y + 50);
-                parametersLabel.Size = new Size(100, 25);
-                parametersLabel.Text = param.Name;
+                parametersLabel.Size = new Size(150, 20);
+                parametersLabel.Text = filter.GetParameters()[i].Name;
+                parametersLabel.Font = new Font("Calibri", 10);
                 Controls.Add(parametersLabel);
 
                 parameters = new TextBox();
-                parameters.Location = new Point(filterSelector.Location.X, filterSelector.Location.Y + 120);
-                parameters.Size = new Size(50, 50);
+                parameters.Text = 100.ToString();
+                parameters.Location = new Point(filterSelector.Location.X + 200, filterSelector.Location.Y + 50);
+                parameters.Size = new Size(40, 20);
+                parameters.TextAlign = HorizontalAlignment.Center;
+                parameters.Font = new Font("Calibri", 10);
                 Controls.Add(parameters);
-            }
-            
+            }          
         }
 
         public void AddFilter(IFilter filter)
