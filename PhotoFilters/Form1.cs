@@ -17,19 +17,14 @@ namespace PhotoFilters
     {
         Bitmap bm;
         Photo photo;
-
         Label parametersLabel;
         TextBox parameters = new TextBox();
-
+        private string defaultPicturePath = @"C:\Users\Александр\source\repos\PhotoFilters\PhotoFilters.BL\Images\DefaultImage.jpg";
 
         public MainForm()
         {
             InitializeComponent();
-
-            bm = new Bitmap(@"C:\Users\Александр\source\repos\PhotoFilters\PhotoFilters.BL\Images\DefaultImage.jpg");
-            var image = new Bitmap(bm, new Size(480, 300));
-            photo = Conversion.BitmapToPhoto(image);
-            originalPicture.Image = image;
+            SetOriginalPicture(defaultPicturePath);
 
             filterSelector.SelectedIndexChanged += ClickChangeFilter;
             applyButton.Click += ClickApply;
@@ -41,9 +36,7 @@ namespace PhotoFilters
         {
             SaveFileDialog dlg = new SaveFileDialog();
             if(dlg.ShowDialog() == DialogResult.OK)
-            {
                 resultPicture.Image.Save(dlg.FileName+".jpg");
-            }
         }
 
         private void ClickOpen(object sender, EventArgs e)
@@ -52,12 +45,7 @@ namespace PhotoFilters
             dlg.Filter = "Графические файлы|*.jpg|Все файлы |*.*";
 
             if(dlg.ShowDialog() == DialogResult.OK)
-            {
-                bm = new Bitmap(dlg.FileName);
-                var image = new Bitmap(bm, new Size(480, 300));
-                photo = Conversion.BitmapToPhoto(image);
-                originalPicture.Image = image;
-            }
+                SetOriginalPicture(dlg.FileName);
         }
 
         private void ClickApply(object sender, EventArgs e)
@@ -103,6 +91,14 @@ namespace PhotoFilters
         public void AddFilter(IFilter filter)
         {
             filterSelector.Items.Add(filter);
+        }
+
+        public void SetOriginalPicture(string pathFile)
+        {
+            bm = new Bitmap(pathFile);
+            var image = new Bitmap(bm, new Size(480, 300));
+            photo = Conversion.BitmapToPhoto(image);
+            originalPicture.Image = image;
         }
 
     }

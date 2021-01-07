@@ -7,6 +7,5 @@ namespace PhotoFilters.BL
     public class FilterParameter
     {
         public string Name { get; set; }
-        
     }
 }

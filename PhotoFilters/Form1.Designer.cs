@@ -46,7 +46,7 @@ namespace PhotoFilters
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.originalPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.originalPicture.Location = new System.Drawing.Point(12, 27);
+            this.originalPicture.Location = new System.Drawing.Point(17, 22);
             this.originalPicture.Name = "originalPicture";
             this.originalPicture.Size = new System.Drawing.Size(480, 300);
             this.originalPicture.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace PhotoFilters
             // resultPicture
             // 
             this.resultPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.resultPicture.Location = new System.Drawing.Point(12, 349);
+            this.resultPicture.Location = new System.Drawing.Point(17, 344);
             this.resultPicture.Name = "resultPicture";
             this.resultPicture.Size = new System.Drawing.Size(480, 300);
             this.resultPicture.TabIndex = 1;
@@ -66,7 +66,7 @@ namespace PhotoFilters
             this.SelectFilterLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SelectFilterLabel.AutoSize = true;
             this.SelectFilterLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SelectFilterLabel.Location = new System.Drawing.Point(605, 27);
+            this.SelectFilterLabel.Location = new System.Drawing.Point(610, 22);
             this.SelectFilterLabel.Name = "SelectFilterLabel";
             this.SelectFilterLabel.Size = new System.Drawing.Size(82, 19);
             this.SelectFilterLabel.TabIndex = 4;
@@ -80,7 +80,7 @@ namespace PhotoFilters
             this.filterSelector.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.filterSelector.FormattingEnabled = true;
             this.filterSelector.IntegralHeight = false;
-            this.filterSelector.Location = new System.Drawing.Point(520, 50);
+            this.filterSelector.Location = new System.Drawing.Point(525, 45);
             this.filterSelector.MaxDropDownItems = 10;
             this.filterSelector.Name = "filterSelector";
             this.filterSelector.Size = new System.Drawing.Size(240, 23);
@@ -89,7 +89,7 @@ namespace PhotoFilters
             // applyButton
             // 
             this.applyButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.applyButton.Location = new System.Drawing.Point(520, 144);
+            this.applyButton.Location = new System.Drawing.Point(525, 139);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(240, 30);
             this.applyButton.TabIndex = 6;
@@ -99,7 +99,7 @@ namespace PhotoFilters
             // SaveFileButton
             // 
             this.SaveFileButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveFileButton.Location = new System.Drawing.Point(520, 619);
+            this.SaveFileButton.Location = new System.Drawing.Point(525, 614);
             this.SaveFileButton.Name = "SaveFileButton";
             this.SaveFileButton.Size = new System.Drawing.Size(240, 30);
             this.SaveFileButton.TabIndex = 7;
@@ -109,7 +109,7 @@ namespace PhotoFilters
             // OpenFileButton
             // 
             this.OpenFileButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OpenFileButton.Location = new System.Drawing.Point(520, 583);
+            this.OpenFileButton.Location = new System.Drawing.Point(525, 578);
             this.OpenFileButton.Name = "OpenFileButton";
             this.OpenFileButton.Size = new System.Drawing.Size(240, 30);
             this.OpenFileButton.TabIndex = 8;
