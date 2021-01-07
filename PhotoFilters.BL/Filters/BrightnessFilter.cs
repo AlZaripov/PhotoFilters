@@ -4,11 +4,14 @@ using System.Text;
 
 namespace PhotoFilters.BL
 {
-    public class BrightnessFilter : IFilter
+    public class BrightnessFilter : BaseFilter
     {
-        public override string ToString()
+        public override FilterParameter[] GetParameters()
         {
-            return "Brightness filter";
+            return new FilterParameter[]
+            {
+                new FilterParameter() {Name = "Brightness, (%)" }
+            };
         }
 
         public override Photo ChangeImage(Photo original, double value)
@@ -27,12 +30,9 @@ namespace PhotoFilters.BL
             return photo;
         }
 
-        public override FilterParameter[] GetParameters()
+        public override string ToString()
         {
-            return new FilterParameter[]
-            {
-                new FilterParameter() {Name = "Brightness, (%)" }
-            };
+            return "Brightness filter";
         }
 
         private double LimitPixelValue(double value)

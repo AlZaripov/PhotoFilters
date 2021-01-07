@@ -4,23 +4,29 @@ using System.Text;
 
 namespace PhotoFilters.BL
 {
-    public class NegativeFilter : BaseFilter
-    {  
+    public class BlackAndWhiteFilter : BaseFilter
+    {
         public override FilterParameter[] GetParameters()
         {
-            return new FilterParameter[] { };
+            return new FilterParameter[]
+            {
+                new FilterParameter() { Name = "Separator, (%)" }
+            };
         }
-     
+
         public override Photo ChangeImage(Photo original, double value)
         {
+            double coefficient = value / 100;
             var photo = new Photo(original.Width, original.Height);
             for (int i = 0; i < original.Width; i++)
             {
                 for (int j = 0; j < original.Height; j++)
                 {
-                    photo[i, j].R = 255 - original[i, j].R;
-                    photo[i, j].G = 255 - original[i, j].G;
-                    photo[i, j].B = 255 - original[i, j].B;
+                    double color = original[i, j].R + original[i, j].G + original[i, j].B;
+                    if (color > 255 / 2 / coefficient * 3)
+                        photo[i, j] = new Pixel(255, 255, 255);
+                    else
+                        photo[i, j] = new Pixel(0, 0, 0);
                 }
             }
             return photo;
@@ -28,7 +34,7 @@ namespace PhotoFilters.BL
 
         public override string ToString()
         {
-            return "Negative filter";
+            return "B&W filter";
         }
     }
 }

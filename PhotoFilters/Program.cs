@@ -21,7 +21,11 @@ namespace PhotoFilters
             var mainForm = new MainForm();
             mainForm.AddFilter(new GrayScaleFilter());
             mainForm.AddFilter(new BrightnessFilter());
-
+            mainForm.AddFilter(new NegativeFilter());
+            mainForm.AddFilter(new BlackAndWhiteFilter());
+            mainForm.AddFilter(new SepiaFilter());
+            mainForm.AddFilter(new MirrorFilter());
+            
             Application.Run(mainForm);
         }
     }

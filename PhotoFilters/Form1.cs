@@ -50,7 +50,7 @@ namespace PhotoFilters
 
         private void ClickApply(object sender, EventArgs e)
         {
-            var filter = (IFilter)filterSelector.SelectedItem;
+            var filter = (BaseFilter)filterSelector.SelectedItem;
             if (filter == null) return;
 
             if (double.TryParse(parameters.Text.Replace(',', '.'), out double result))
@@ -65,7 +65,7 @@ namespace PhotoFilters
 
         private void ClickChangeFilter(object sender, EventArgs e)
         {
-            var filter = (IFilter)filterSelector.SelectedItem;
+            var filter = (BaseFilter)filterSelector.SelectedItem;
             Controls.Remove(parametersLabel);
             Controls.Remove(parameters);
 
@@ -88,7 +88,7 @@ namespace PhotoFilters
             }
         }
 
-        public void AddFilter(IFilter filter)
+        public void AddFilter(BaseFilter filter)
         {
             filterSelector.Items.Add(filter);
         }
