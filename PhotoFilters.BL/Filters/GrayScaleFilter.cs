@@ -11,7 +11,7 @@ namespace PhotoFilters.BL
             return "Grayscale filter";
         }
 
-        public Photo ChangeImage(Photo original, double coefficient)
+        public override Photo ChangeImage(Photo original, double coefficient)
         {
             var photo = new Photo(original.Width, original.Height);
             for(int i = 0; i < original.Width; i++)
@@ -25,7 +25,7 @@ namespace PhotoFilters.BL
             return photo;
         }
 
-        public FilterParameter[] GetParameters()
+        public override FilterParameter[] GetParameters()
         {
             return new FilterParameter[] { };
         }

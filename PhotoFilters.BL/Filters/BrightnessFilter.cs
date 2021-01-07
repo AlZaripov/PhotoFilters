@@ -6,14 +6,12 @@ namespace PhotoFilters.BL
 {
     public class BrightnessFilter : IFilter
     {
-        public FilterParameter Parameters { get; set; }
-
         public override string ToString()
         {
             return "Brightness filter";
         }
 
-        public Photo ChangeImage(Photo original, double value)
+        public override Photo ChangeImage(Photo original, double value)
         {
             double coefficient = value / 100;
             var photo = new Photo(original.Width, original.Height);
@@ -29,7 +27,7 @@ namespace PhotoFilters.BL
             return photo;
         }
 
-        public FilterParameter[] GetParameters()
+        public override FilterParameter[] GetParameters()
         {
             return new FilterParameter[]
             {

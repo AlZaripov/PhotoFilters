@@ -4,10 +4,10 @@ using System.Text;
 
 namespace PhotoFilters.BL
 {
-    public interface IFilter
+    public abstract class IFilter
     {
-        FilterParameter[] GetParameters();
-        string ToString();
-        Photo ChangeImage(Photo original, double value);
+        public abstract FilterParameter[] GetParameters();
+        public abstract override string ToString();
+        public abstract Photo ChangeImage(Photo original, double value);
     }
 }
