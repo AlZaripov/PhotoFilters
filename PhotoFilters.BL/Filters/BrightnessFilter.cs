@@ -21,9 +21,9 @@ namespace PhotoFilters.BL
             {
                 for (int j = 0; j < original.Height; j++)
                 {
-                    photo[i, j].R = original[i, j].R * coefficient;
-                    photo[i, j].G = original[i, j].G * coefficient;
-                    photo[i, j].B = original[i, j].B * coefficient;
+                    photo[i, j].R = LimitPixelValue(original[i, j].R * coefficient);
+                    photo[i, j].G = LimitPixelValue(original[i, j].G * coefficient);
+                    photo[i, j].B = LimitPixelValue(original[i, j].B * coefficient);
                 }
             }
             return photo;
@@ -35,6 +35,13 @@ namespace PhotoFilters.BL
             {
                 new FilterParameter() {Name = "Brightness, (%)" }
             };
+        }
+
+        private double LimitPixelValue(double value)
+        {
+            if (value < 0) return 0;
+            if (value > 255) return 255;
+            return value;
         }
     }
 

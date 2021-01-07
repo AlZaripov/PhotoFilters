@@ -34,6 +34,8 @@ namespace PhotoFilters
             this.SelectFilterLabel = new System.Windows.Forms.Label();
             this.filterSelector = new System.Windows.Forms.ComboBox();
             this.applyButton = new System.Windows.Forms.Button();
+            this.SaveFileButton = new System.Windows.Forms.Button();
+            this.OpenFileButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.originalPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultPicture)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +45,7 @@ namespace PhotoFilters
             this.originalPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.originalPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.originalPicture.Location = new System.Drawing.Point(12, 27);
             this.originalPicture.Name = "originalPicture";
             this.originalPicture.Size = new System.Drawing.Size(480, 300);
@@ -51,6 +54,7 @@ namespace PhotoFilters
             // 
             // resultPicture
             // 
+            this.resultPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.resultPicture.Location = new System.Drawing.Point(12, 349);
             this.resultPicture.Name = "resultPicture";
             this.resultPicture.Size = new System.Drawing.Size(480, 300);
@@ -85,18 +89,40 @@ namespace PhotoFilters
             // applyButton
             // 
             this.applyButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.applyButton.Location = new System.Drawing.Point(520, 297);
+            this.applyButton.Location = new System.Drawing.Point(520, 144);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(240, 30);
             this.applyButton.TabIndex = 6;
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;
             // 
+            // SaveFileButton
+            // 
+            this.SaveFileButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SaveFileButton.Location = new System.Drawing.Point(520, 619);
+            this.SaveFileButton.Name = "SaveFileButton";
+            this.SaveFileButton.Size = new System.Drawing.Size(240, 30);
+            this.SaveFileButton.TabIndex = 7;
+            this.SaveFileButton.Text = "Save";
+            this.SaveFileButton.UseVisualStyleBackColor = true;
+            // 
+            // OpenFileButton
+            // 
+            this.OpenFileButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OpenFileButton.Location = new System.Drawing.Point(520, 583);
+            this.OpenFileButton.Name = "OpenFileButton";
+            this.OpenFileButton.Size = new System.Drawing.Size(240, 30);
+            this.OpenFileButton.TabIndex = 8;
+            this.OpenFileButton.Text = "Open";
+            this.OpenFileButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 661);
+            this.Controls.Add(this.OpenFileButton);
+            this.Controls.Add(this.SaveFileButton);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.filterSelector);
             this.Controls.Add(this.SelectFilterLabel);
@@ -119,6 +145,8 @@ namespace PhotoFilters
         private System.Windows.Forms.Label SelectFilterLabel;
         private System.Windows.Forms.ComboBox filterSelector;
         private System.Windows.Forms.Button applyButton;
+        private System.Windows.Forms.Button SaveFileButton;
+        private System.Windows.Forms.Button OpenFileButton;
     }
 }
 
