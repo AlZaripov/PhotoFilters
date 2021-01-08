@@ -128,6 +128,7 @@ namespace PhotoFilters
             this.Controls.Add(this.SelectFilterLabel);
             this.Controls.Add(this.resultPicture);
             this.Controls.Add(this.originalPicture);
+            this.Icon = global::PhotoFilters.Properties.Resources.Icon;
             this.MinimumSize = new System.Drawing.Size(800, 700);
             this.Name = "MainForm";
             this.Text = "Photo filters";

@@ -11,20 +11,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PhotoFilters.BL;
 
+
 namespace PhotoFilters
 {
     public partial class MainForm : Form
     {
-        Bitmap bm;
         Photo photo;
         Label parametersLabel;
         TextBox parameters = new TextBox();
-        private string defaultPicturePath = @"C:\Users\Александр\source\repos\PhotoFilters\PhotoFilters.BL\Images\DefaultImage.jpg";
+
+        Bitmap defaultImage = new Bitmap(Properties.Resources.DefaultImage);
 
         public MainForm()
         {
+
             InitializeComponent();
-            SetOriginalPicture(defaultPicturePath);
+            SetOriginalPicture(defaultImage);
 
             filterSelector.SelectedIndexChanged += ClickChangeFilter;
             applyButton.Click += ClickApply;
@@ -44,7 +46,7 @@ namespace PhotoFilters
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "Графические файлы|*.jpg|Все файлы |*.*";
 
-            if(dlg.ShowDialog() == DialogResult.OK)
+            if (dlg.ShowDialog() == DialogResult.OK)
                 SetOriginalPicture(dlg.FileName);
         }
 
@@ -93,13 +95,19 @@ namespace PhotoFilters
             filterSelector.Items.Add(filter);
         }
 
-        public void SetOriginalPicture(string pathFile)
+        public void SetOriginalPicture(Bitmap bitmap)
         {
-            bm = new Bitmap(pathFile);
-            var image = new Bitmap(bm, new Size(480, 300));
+            var image = new Bitmap(bitmap, new Size(480, 300));
             photo = Conversion.BitmapToPhoto(image);
             originalPicture.Image = image;
         }
 
+        public void SetOriginalPicture(string filePath)
+        {
+            var bm = new Bitmap(filePath);
+            var image = new Bitmap(bm, new Size(480, 300));
+            photo = Conversion.BitmapToPhoto(image);
+            originalPicture.Image = image;
+        }
     }
 }
