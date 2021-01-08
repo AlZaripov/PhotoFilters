@@ -21,10 +21,10 @@ namespace PhotoFilters
         TextBox parameters = new TextBox();
 
         Bitmap defaultImage = new Bitmap(Properties.Resources.DefaultImage);
+        Bitmap resultImage;
 
         public MainForm()
         {
-
             InitializeComponent();
             SetOriginalPicture(defaultImage);
 
@@ -38,7 +38,7 @@ namespace PhotoFilters
         {
             SaveFileDialog dlg = new SaveFileDialog();
             if(dlg.ShowDialog() == DialogResult.OK)
-                resultPicture.Image.Save(dlg.FileName+".jpg");
+               resultImage.Save(dlg.FileName+".jpg");
         }
 
         private void ClickOpen(object sender, EventArgs e)
@@ -61,8 +61,9 @@ namespace PhotoFilters
                     result = 999;
                     parameters.Text = result.ToString();
                 }
-                
-            resultPicture.Image = Conversion.PhotoToBitmap(filter.ChangeImage(photo, result));
+            
+            resultImage = new Bitmap(Conversion.PhotoToBitmap(filter.ChangeImage(photo, result)));
+            resultPicture.Image = new Bitmap(resultImage, new Size(480, 300));
         }
 
         private void ClickChangeFilter(object sender, EventArgs e)
@@ -97,16 +98,16 @@ namespace PhotoFilters
 
         public void SetOriginalPicture(Bitmap bitmap)
         {
-            var image = new Bitmap(bitmap, new Size(480, 300));
-            photo = Conversion.BitmapToPhoto(image);
-            originalPicture.Image = image;
+            var sizedOriginalPicture = new Bitmap(bitmap, new Size(480, 300));
+            originalPicture.Image = sizedOriginalPicture;
+            photo = Conversion.BitmapToPhoto(bitmap);
         }
 
         public void SetOriginalPicture(string filePath)
         {
             var bm = new Bitmap(filePath);
             var image = new Bitmap(bm, new Size(480, 300));
-            photo = Conversion.BitmapToPhoto(image);
+            photo = Conversion.BitmapToPhoto(bm);
             originalPicture.Image = image;
         }
     }

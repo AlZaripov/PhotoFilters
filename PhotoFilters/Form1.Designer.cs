@@ -42,6 +42,7 @@ namespace PhotoFilters
             // 
             // originalPicture
             // 
+            this.originalPicture.BackColor = System.Drawing.SystemColors.Control;
             this.originalPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.originalPicture.Location = new System.Drawing.Point(17, 22);
             this.originalPicture.Name = "originalPicture";
@@ -51,6 +52,7 @@ namespace PhotoFilters
             // 
             // resultPicture
             // 
+            this.resultPicture.BackColor = System.Drawing.SystemColors.Control;
             this.resultPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.resultPicture.Location = new System.Drawing.Point(17, 344);
             this.resultPicture.Name = "resultPicture";
@@ -122,6 +124,7 @@ namespace PhotoFilters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(784, 661);
             this.Controls.Add(this.OpenFileButton);
             this.Controls.Add(this.SaveFileButton);
