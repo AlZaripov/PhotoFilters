@@ -80,7 +80,9 @@ namespace PhotoFilters
             this.filterSelector.Location = new System.Drawing.Point(525, 45);
             this.filterSelector.MaxDropDownItems = 10;
             this.filterSelector.Name = "filterSelector";
+            this.filterSelector.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.filterSelector.Size = new System.Drawing.Size(240, 23);
+            this.filterSelector.Sorted = true;
             this.filterSelector.TabIndex = 5;
             // 
             // applyButton

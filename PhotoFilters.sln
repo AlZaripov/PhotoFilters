@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoFilters", "PhotoFilters\PhotoFilters.csproj", "{6B4F3242-6DFD-4DF2-A1EC-AD094FA27B68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoFilters.BL", "PhotoFilters.BL\PhotoFilters.BL.csproj", "{C99E687F-F387-4CA3-9F7E-25037AA2FB43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoFilters.BL", "PhotoFilters.BL\PhotoFilters.BL.csproj", "{C99E687F-F387-4CA3-9F7E-25037AA2FB43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoFilters.BL.Test", "PhotoFilters.BL.Test\PhotoFilters.BL.Test.csproj", "{28969355-2004-41DE-934F-6B9AB8317FD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C99E687F-F387-4CA3-9F7E-25037AA2FB43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C99E687F-F387-4CA3-9F7E-25037AA2FB43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C99E687F-F387-4CA3-9F7E-25037AA2FB43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28969355-2004-41DE-934F-6B9AB8317FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28969355-2004-41DE-934F-6B9AB8317FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28969355-2004-41DE-934F-6B9AB8317FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28969355-2004-41DE-934F-6B9AB8317FD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
