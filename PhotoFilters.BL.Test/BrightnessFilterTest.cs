@@ -8,23 +8,30 @@ namespace PhotoFilters.BL.Test
     public class BrightnessFilterTest : BaseFilterTest
     {
         [TestMethod]
-        public void WithoutLightPixel()
+        public void GetDarkPixel()
         {
             originalPicture[0, 0] = new Pixel(10, 10, 10);
             resultPicture = new BrightnessFilter().ChangeImage(originalPicture, 10);
 
-            Assert.AreEqual(10, originalPicture[0, 0].R);
-            Assert.AreEqual(1, resultPicture[0, 0].R);
+            Assert.IsTrue(resultPicture[0, 0].Equals(new Pixel(1, 1, 1)));
         }
 
         [TestMethod]
-        public void OverLightPixel()
+        public void GetLightPixel()
+        {
+            originalPicture[0, 0] = new Pixel(100, 100, 100);
+            resultPicture = new BrightnessFilter().ChangeImage(originalPicture, 200);
+
+            Assert.IsTrue(resultPicture[0, 0].Equals(new Pixel(200, 200, 200)));
+        }
+
+        [TestMethod]
+        public void GetWhitePixel()
         {
             originalPicture[0, 0] = new Pixel(200, 200, 200);
             resultPicture = new BrightnessFilter().ChangeImage(originalPicture, 500);
 
-            Assert.AreEqual(200, originalPicture[0, 0].R);
-            Assert.AreEqual(255, resultPicture[0, 0].R);
+            Assert.IsTrue(resultPicture[0, 0].Equals(new Pixel(255, 255, 255)));
         }
 
     }

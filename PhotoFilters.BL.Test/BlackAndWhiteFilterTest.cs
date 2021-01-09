@@ -13,8 +13,7 @@ namespace PhotoFilters.BL.Test
             originalPicture[0, 0] = new Pixel(10, 10, 10);
             resultPicture = new BlackAndWhiteFilter().ChangeImage(originalPicture, 100);
 
-            Assert.AreEqual(10, originalPicture[0, 0].R);
-            Assert.AreEqual(0, resultPicture[0, 0].R);
+            Assert.IsTrue(resultPicture[0, 0].Equals(new Pixel(0, 0, 0)));
         }
 
         [TestMethod]
@@ -23,8 +22,7 @@ namespace PhotoFilters.BL.Test
             originalPicture[0, 0] = new Pixel(200, 200, 200);
             resultPicture = new BlackAndWhiteFilter().ChangeImage(originalPicture, 100);
 
-            Assert.AreEqual(200, originalPicture[0, 0].R);
-            Assert.AreEqual(255, resultPicture[0, 0].R);
+            Assert.IsTrue(resultPicture[0, 0].Equals(new Pixel(255, 255, 255)));
         }
     }
 }

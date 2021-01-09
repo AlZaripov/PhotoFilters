@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PhotoFilters.BL
 {
-    public class Pixel
+    public class Pixel 
     {
         private double r;
         public double R
@@ -44,5 +44,12 @@ namespace PhotoFilters.BL
                 throw new ArgumentException("Pixel value is not correct");
             return value;
         }
-    }
+
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != this.GetType()) return false;
+            var pixel = obj as Pixel;
+            return (pixel.R == R && pixel.G == G && pixel.B == B);
+        }
+    } 
 }
