@@ -63,62 +63,68 @@ namespace PhotoFilters
             // SelectFilterLabel
             // 
             this.SelectFilterLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SelectFilterLabel.AutoSize = true;
-            this.SelectFilterLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SelectFilterLabel.Location = new System.Drawing.Point(610, 22);
+            this.SelectFilterLabel.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SelectFilterLabel.Location = new System.Drawing.Point(525, 12);
             this.SelectFilterLabel.Name = "SelectFilterLabel";
-            this.SelectFilterLabel.Size = new System.Drawing.Size(82, 19);
+            this.SelectFilterLabel.Size = new System.Drawing.Size(240, 30);
             this.SelectFilterLabel.TabIndex = 4;
             this.SelectFilterLabel.Text = "Select filter";
+            this.SelectFilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // filterSelector
             // 
             this.filterSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.filterSelector.DropDownHeight = 120;
             this.filterSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.filterSelector.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.filterSelector.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.filterSelector.FormattingEnabled = true;
             this.filterSelector.IntegralHeight = false;
-            this.filterSelector.Location = new System.Drawing.Point(525, 45);
+            this.filterSelector.Location = new System.Drawing.Point(525, 50);
             this.filterSelector.MaxDropDownItems = 10;
             this.filterSelector.Name = "filterSelector";
             this.filterSelector.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.filterSelector.Size = new System.Drawing.Size(240, 23);
+            this.filterSelector.Size = new System.Drawing.Size(240, 27);
             this.filterSelector.Sorted = true;
             this.filterSelector.TabIndex = 5;
             // 
             // applyButton
             // 
             this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.applyButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.applyButton.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.applyButton.FlatAppearance.BorderSize = 10;
             this.applyButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.applyButton.Location = new System.Drawing.Point(525, 139);
+            this.applyButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.applyButton.Location = new System.Drawing.Point(525, 100);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(240, 30);
             this.applyButton.TabIndex = 6;
             this.applyButton.Text = "Apply";
-            this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.UseVisualStyleBackColor = false;
             // 
             // SaveFileButton
             // 
             this.SaveFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveFileButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.SaveFileButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveFileButton.Location = new System.Drawing.Point(525, 614);
             this.SaveFileButton.Name = "SaveFileButton";
             this.SaveFileButton.Size = new System.Drawing.Size(240, 30);
             this.SaveFileButton.TabIndex = 7;
-            this.SaveFileButton.Text = "Save";
-            this.SaveFileButton.UseVisualStyleBackColor = true;
+            this.SaveFileButton.Text = "Save as";
+            this.SaveFileButton.UseVisualStyleBackColor = false;
             // 
             // OpenFileButton
             // 
             this.OpenFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpenFileButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.OpenFileButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OpenFileButton.Location = new System.Drawing.Point(525, 578);
             this.OpenFileButton.Name = "OpenFileButton";
             this.OpenFileButton.Size = new System.Drawing.Size(240, 30);
             this.OpenFileButton.TabIndex = 8;
-            this.OpenFileButton.Text = "Open";
-            this.OpenFileButton.UseVisualStyleBackColor = true;
+            this.OpenFileButton.Text = "Open file ";
+            this.OpenFileButton.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -134,13 +140,14 @@ namespace PhotoFilters
             this.Controls.Add(this.resultPicture);
             this.Controls.Add(this.originalPicture);
             this.Icon = global::PhotoFilters.Properties.Resources.Icon;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 700);
             this.MinimumSize = new System.Drawing.Size(800, 700);
             this.Name = "MainForm";
             this.Text = "Photo filters";
             ((System.ComponentModel.ISupportInitialize)(this.originalPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultPicture)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

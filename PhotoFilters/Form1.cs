@@ -75,7 +75,7 @@ namespace PhotoFilters
             for (int i = 0; i < filter.GetParameters().Length; i++)
             {
                 parametersLabel = new Label();
-                parametersLabel.Location = new Point(filterSelector.Location.X, filterSelector.Location.Y + 50);
+                parametersLabel.Location = new Point(filterSelector.Location.X, filterSelector.Location.Y + 50 * (i+1));
                 parametersLabel.Size = new Size(150, 20);
                 parametersLabel.Text = filter.GetParameters()[i].Name;
                 parametersLabel.Font = new Font("Calibri", 10);
@@ -83,12 +83,13 @@ namespace PhotoFilters
 
                 parameters = new TextBox();
                 parameters.Text = 100.ToString();
-                parameters.Location = new Point(filterSelector.Location.X + 200, filterSelector.Location.Y + 50);
+                parameters.Location = new Point(filterSelector.Location.X + 200, filterSelector.Location.Y + 50 * (i + 1));
                 parameters.Size = new Size(40, 20);
                 parameters.TextAlign = HorizontalAlignment.Center;
                 parameters.Font = new Font("Calibri", 10);
                 Controls.Add(parameters);
             }
+            applyButton.Location = new Point(filterSelector.Location.X, filterSelector.Location.Y + 50 * (filter.GetParameters().Length + 1));
         }
 
         public void AddFilter(BaseFilter filter)
